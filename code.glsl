@@ -28,7 +28,7 @@ void main(void)
  uv*=r(floor(cos(length(uv*2)*10)-iTime));
    vec3 col = vec3(0.);
   for(float y=-1.; y<=1.; y++) {
-     float d =  0.;
+     float d =  i;
   for(float x=-1.; x<=1.; x++){
       vec2 off = vec2(x,y);
      vec2 gv = off +uv;
