@@ -23,7 +23,7 @@ void main(void)
 {
   vec2 uv = (gl_FragCoord.xy-.5 * v2Resolution.xy)  / v2Resolution.y;
  for(float i=0.;i<=4.;i++){
-        uv = abs(uv+vec2(0.5,.05))-.1;
+        uv = abs(uv)-.1;
    }
  uv*=r(floor(cos(length(uv*2)*10)-iTime));
    vec3 col = vec3(0.);
