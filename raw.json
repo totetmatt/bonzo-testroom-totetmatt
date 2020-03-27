@@ -1,8 +1,8 @@
 {
 	"Data": {
-		"Anchor": 879,
-		"Caret": 879,
-		"Code": "#version 410 core\n\nuniform float fGlobalTime; \/\/ in seconds\nuniform vec2 v2Resolution; \/\/ viewport resolution (in pixels)\n\nuniform sampler1D texFFT; \/\/ towards 0.0 is bass \/ lower freq, towards 1.0 is higher \/ treble freq\nuniform sampler1D texFFTSmoothed; \/\/ this one has longer falloff and less harsh transients\nuniform sampler1D texFFTIntegrated; \/\/ this is continually increasing\nuniform sampler2D texChecker;\nuniform sampler2D texNoise;\nuniform sampler2D texTex1;\nuniform sampler2D texTex2;\nuniform sampler2D texTex3;\nuniform sampler2D texTex4;\n\nlayout(location = 0) out vec4 out_color; \/\/ out_color must be written in order to see anything\n#define iTime fGlobalTime\nmat2 r(float a){\r\n  float c=cos(a),s=sin(a);\r\n   return mat2(c,-s,s,c);\r\n  }\nvoid main(void)\n{\n  vec2 uv = (gl_FragCoord.xy-.5 * v2Resolution.xy)  \/ v2Resolution.y;\n \r\n  \r\n  vec3 col = vec3(sin(length(uv)*10.));\n  out_color = vec4(col,1.);\n}",
+		"Anchor": 888,
+		"Caret": 888,
+		"Code": "#version 410 core\n\nuniform float fGlobalTime; \/\/ in seconds\nuniform vec2 v2Resolution; \/\/ viewport resolution (in pixels)\n\nuniform sampler1D texFFT; \/\/ towards 0.0 is bass \/ lower freq, towards 1.0 is higher \/ treble freq\nuniform sampler1D texFFTSmoothed; \/\/ this one has longer falloff and less harsh transients\nuniform sampler1D texFFTIntegrated; \/\/ this is continually increasing\nuniform sampler2D texChecker;\nuniform sampler2D texNoise;\nuniform sampler2D texTex1;\nuniform sampler2D texTex2;\nuniform sampler2D texTex3;\nuniform sampler2D texTex4;\n\nlayout(location = 0) out vec4 out_color; \/\/ out_color must be written in order to see anything\n#define iTime fGlobalTime\nmat2 r(float a){\r\n  float c=cos(a),s=sin(a);\r\n   return mat2(c,-s,s,c);\r\n  }\nvoid main(void)\n{\n  vec2 uv = (gl_FragCoord.xy-.5 * v2Resolution.xy)  \/ v2Resolution.y;\n \r\n  \r\n  vec3 col = vec3(floor(sin(length(uv)*10.)));\n  out_color = vec4(col,1.);\n}",
 		"Compile": true,
 		"FirstVisibleLine": 0 
 	} 
