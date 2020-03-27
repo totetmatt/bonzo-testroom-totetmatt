@@ -23,7 +23,7 @@ void main(void)
 {
   vec2 uv = (gl_FragCoord.xy-.5 * v2Resolution.xy)  / v2Resolution.y;
  
-  
+  uv*=r(iTime);
   vec3 col = vec3(sign(sin(length(cos(iTime+uv*10.))*10.)));
   out_color = vec4(col,1.);
 }
