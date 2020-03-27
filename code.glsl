@@ -22,20 +22,8 @@ mat2 r(float a){
 void main(void)
 {
   vec2 uv = (gl_FragCoord.xy-.5 * v2Resolution.xy)  / v2Resolution.y;
- for(float i=0.;i<=4.;i++){
-        uv = abs(uv)-.1;
-   }
- uv*=r(floor(cos(length(uv*2)*10)-iTime));
-   vec3 col = vec3(0.);
-  for(float y=-1.; y<=1.; y++) {
-     float d =  .1;
-  for(float x=-1.; x<=1.; x++){
-      vec2 off = vec2(x,y);
-     vec2 gv = off +uv;
-    gv*=r(length(vec2(x,y))*1.+iTime);
-     d += .05/length(gv+sin(iTime+10.*atan(uv.x,uv.y)));
-  }
- col[int(mod(int(y)+2,2))] = d;
-}
+ 
+  
+  vec3 col = vec3(length(uv));
   out_color = vec4(col,1.);
 }
