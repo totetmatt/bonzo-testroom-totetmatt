@@ -32,7 +32,7 @@ void main(void)
   for(float x=-1.; x<=1.; x++){
       vec2 off = vec2(x,y);
      vec2 gv = off +uv;
-    gv*=r(length(vec2(x,y))*5.+iTime);
+    gv*=r(length(vec2(x,y))*1.+iTime);
      d += .05/length(gv+sin(iTime+10.*atan(uv.x,uv.y)));
   }
  col[int(mod(int(y)+2,2))] = d;
