@@ -24,6 +24,6 @@ void main(void)
   vec2 uv = (gl_FragCoord.xy-.5 * v2Resolution.xy)  / v2Resolution.y;
  
   
-  vec3 col = vec3(floor(.5+.5*sin(length(uv)*10.)));
+  vec3 col = vec3(floor(1.5+.5*sin(length(uv)*10.)));
   out_color = vec4(col,1.);
 }
