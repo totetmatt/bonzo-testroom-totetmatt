@@ -37,6 +37,5 @@ void main(void)
   }
  col[int(mod(int(y)+2,2))] = d;
 }
-  col.br += sqrt(col.gr);
   out_color = vec4(col,1.);
 }
